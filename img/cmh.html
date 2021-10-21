@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="srylesheet" type="text/dss"
+    href="./css/index.css"/>
+
+</head>
+<style>
+    *{ 
+	margin: 0; /*去掉外边距*/
+	padding: 0; /*去掉内边距*/
+}
+
+.box{
+	width: 200px; /*宽度*/
+	height: 200px; /*高度*/
+	position: absolute;/*绝对定位*/
+	top: 15%; /*与顶部的距离*/
+	left: 20%;/*与左侧的距离*/
+	transform-style: preserve-3d; /*^_^只有设置了此属性才有z轴*/
+	transform: rotateX(-90deg);/*绕x轴旋转*/
+	/*使用动画*/
+	animation: move 10s 100 linear;
+	/*动画名称  动画执行的时间  次数   匀速*/
+}
+ul{
+	list-style: none; /*去掉点*/
+}
+/*定义动画*/
+@keyframes move{
+	from{ transform: rotateX(-30deg) rotateY(0deg); }
+	to{transform: rotateX(-30deg) rotateY(360deg);}
+}
+
+/*小盒子*/
+.minbox{;
+
+	width: 50px; /*宽度*/
+	height: 50px;/*高度*/
+	position: absolute; /*绝对定位*/
+	left: 50px;
+	top: 50px;
+	transform-style: preserve-3d;/*设置为3d图形*/
+}
+.minbox > li{
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;/*边框宽度  样式   颜色*/
+	font-size: 50px;/*设置字体大小*/
+	text-align: center;/*文本水平居中*/
+	line-height: 50px;/*让行高等于高度,达到垂直居中的效果*/
+	position: absolute;
+	left: 0; 
+	top: 0;
+	background-image: url(/mmexport1634788161696.jpg);//可以换成你喜欢的照片
+	background-size: 50px 50px;
+}
+
+.minbox > li:nth-child(1){
+	transform: translateZ(25px);
+}
+.minbox > li:nth-child(2){
+	transform: translateZ(-100px);
+}
+.minbox > li:nth-child(3){
+	transform: rotateY(45deg) translateZ(25px);
+}
+.minbox > li:nth-child(4){
+	transform: rotateY(45deg) translateZ(-100px);
+}
+.minbox > li:nth-child(5){
+	transform: rotateX(45deg) translateZ(25px);
+}
+.minbox > li:nth-child(6){
+	transform: rotateX(45deg) translateZ(-100px);
+}
+ 
+
+/*大盒子*/
+.maxbox{
+	width: 200px; /*宽度*/
+	height: 200px;/*高度*/
+	position: absolute; /*绝对定位*/
+	left: ;
+	top: 0;
+	transform-style: preserve-3d;/*设置为3d图形*/
+}
+.maxbox > li{
+	width: 200px;
+	height: 200px;
+	border: 2px solid rgb(187, 36, 36);/*边框宽度  样式   颜色*/
+	font-size: 50px;/*设置字体大小*/
+	text-align: center;/*文本水平居中*/
+	line-height: 400px;/*让行高等于高度,达到垂直居中的效果*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url(/mmexport1634788140749.jpg);
+}
+
+.maxbox > li:nth-child(1){
+	transform: translateZ(100px);
+}
+.maxbox > li:nth-child(2){
+	transform: translateZ(-100px);
+}
+.maxbox > li:nth-child(3){
+	transform: rotateY(90deg) translateZ(100px);
+}
+.maxbox > li:nth-child(4){
+	transform: rotateY(90deg) translateZ(-100px);
+}
+.maxbox > li:nth-child(5){
+	transform: rotateX(90deg) translateZ(100px);
+}
+.maxbox > li:nth-child(6){
+	transform: rotateX(90deg) translateZ(-100px);
+}
+
+.box:hover ul.maxbox > li{
+	width: 400px;
+	height: 400px;
+	background-size: 400px 400px ;
+	top: -100px;
+	left: -100px;
+}
+
+.box:hover ul.maxbox > li:nth-child(1){
+	transform: translateZ(300px);
+}
+
+.box:hover ul.maxbox > li:nth-child(2){
+	transform: translateZ(-300px);
+}
+
+
+
+.box:hover ul.maxbox > li:nth-child(3){
+	transform:  rotateY(90deg) translateZ(300px);
+}
+
+.box:hover ul.maxbox > li:nth-child(4){
+	transform:  rotateY(90deg) translateZ(-300px);
+}
+
+
+
+.box:hover ul.maxbox > li:nth-child(5){
+	transform: rotateX(90deg) translateZ(300px);
+}
+
+.box:hover ul.maxbox > li:nth-child(6){
+	transform: rotateX(90deg) translateZ(-300px);
+}
+</style>
+<body>
+ <div class="box">
+ <ul class="minbox">
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+    
+    
+    
+ </ul>
+
+
+ <ul class="maxbox">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
+    
+   
+    
+ </ul>  
+ </div>
+</body>
+</html>
